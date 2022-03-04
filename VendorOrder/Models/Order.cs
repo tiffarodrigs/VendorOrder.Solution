@@ -19,14 +19,23 @@ namespace VendorOrder.Models
 
 
     }
+
     public static List<Order> GetAll()
     {
       return _orInstance;
     }
-        public static void ClearAll()
+
+  public static void ClearAll()
     {
       
       _orInstance.Clear();
     }
+  public static Order Find(int searchId)
+    {
+      
+      return _orInstance[searchId-1];
+    }    
+
+      
   }
 }

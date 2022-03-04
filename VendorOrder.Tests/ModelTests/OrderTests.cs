@@ -58,5 +58,19 @@ namespace VendorOrder.Tests
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+    [TestMethod]
+  public void Find_ReturnsCorrectOrder_Order()
+  {
+      string name1 = "cake";
+      string desc1 = "cake desc";
+      int price1 =20;
+      string name2 = "pastry";
+      string desc2 = "pastry desc";
+      int price2 =25;
+      Order newOrder1 = new Order(name1,desc1,price1);
+      Order newOrder2 = new Order(name2,desc2,price2);
+      Order result = Order.Find(2);
+      Assert.AreEqual(newOrder2, result);
+  }
   }
 }
