@@ -1,6 +1,6 @@
-namespace ProjectName
+namespace VendorOrder
 {
-  public class ClassName
+  public class Vendor
   {
     // properties, constructors, methods, etc. go here
   }

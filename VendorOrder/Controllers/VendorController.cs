@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System;
 using Microsoft.AspNetCore.Mvc;
-using ProjectName.Models;
+using VendorOrder.Models;
 
-namespace ProjectName.Controllers
+namespace VendorOrder.Controllers
 {
-  public class ClassNameController : Controller
+  public class VendorController : Controller
   {
     [HttpGet("/")]
     public ActionResult Index()

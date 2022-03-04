@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ToDoList.Models;
 using System.Collections.Generic;
-namespace ProjectName.Controllers
+namespace VendorOrder.Controllers
 {
   public class HomeController : Controller
   {
