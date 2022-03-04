@@ -2,13 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>My To-Do List!</title>
+    <title></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
   <body>
+  @using VendorOrder.Models;
   @if(Model.Count==0)
   {
     <p> There are no vendors yet.Add vendors to display the vendors list</p>
   }
+  @foreach(Vendor vendor in Model)
+  {
+    <p><a href='/vendors/@vendor.Id'>@vendor.VName</a></p>
+  }
+  <p><a href="/">Back Home</a></p>
   </body>
 </html>
