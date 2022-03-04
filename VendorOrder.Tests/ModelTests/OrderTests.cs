@@ -16,8 +16,25 @@ namespace VendorOrder.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order();
+      Order newOrder = new Order("name");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
+    }
+    [TestMethod]
+    public void GetOrName_ReturnsOrderName_String()
+    {
+      string orName = "Cake";
+      Order newOrder = new Order(orName);
+      string result = newOrder.OrName;
+      Assert.AreEqual(orName, result);
+    }
+    public void SetOrName_ReturnsOrderName_String()
+    {
+      string orName = "Cake";
+      Order newOrder = new Order(orName);
+      string updateName = "Pastry";
+      newOrder.OrName=updateName;
+      string result = newOrder.OrName;
+      Assert.AreEqual(updateName, result);
     }
   }
 }
