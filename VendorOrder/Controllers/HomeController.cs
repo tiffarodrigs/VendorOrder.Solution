@@ -10,10 +10,10 @@ namespace VendorOrder.Controllers
       {
         return View();
       }
-  [Route("/favorite_photos")]
-  public ActionResult FavoritePhotos()
-  {
-    return View();
-  }
+  // [Route("/favorite_photos")]
+  // public ActionResult FavoritePhotos()
+  // {
+  //   return View();
+  // }
   }
 }
