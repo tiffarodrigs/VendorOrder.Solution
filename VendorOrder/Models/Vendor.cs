@@ -24,6 +24,10 @@ namespace VendorOrder.Models
   {
     return _vInstance;
   }
+  public static  Vendor Find(int searchId)
+  {
+    return _vInstance[searchId-1];
+  }
   
   }
 }
