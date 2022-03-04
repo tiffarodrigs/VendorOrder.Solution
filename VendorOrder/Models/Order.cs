@@ -5,17 +5,28 @@ namespace VendorOrder.Models
   public class Order
   {
     public string OrName{get; set;}
-    //public string OrDesc{get; set;}
-   // public int  OrPrice{get; set;}
+    public string OrDesc{get; set;}
+    public int  OrPrice{get; set;}
     // DateTime curDate = DateTime.Now
     // public string OrDate =curDate.ToString("MM/dd/yyyy")
-    public Order(string orName)
+    private static List<Order> _orInstance =new List<Order>{};
+    public Order(string orName,string orDesc, int orPrice)
     {
       OrName = orName;
+      OrDesc = orDesc;
+      OrPrice = orPrice;
+      _orInstance.Add(this);
+
+
     }
-    //     public static void ClearAll()
-    // {
-    //   _instances.Clear();
-    // }
+    public static List<Order> GetAll()
+    {
+      return _orInstance;
+    }
+        public static void ClearAll()
+    {
+      
+      _orInstance.Clear();
+    }
   }
 }
