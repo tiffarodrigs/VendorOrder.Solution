@@ -8,7 +8,7 @@ namespace VendorOrder.Models
   public int Id { get; }
   //private static List<Vendor> _vInstance = new List<Vendor> {};
   
-  public Vendor(string vName)
+  public Vendor(string vName,string vDesc)
   {
     VName = vName;
     // //VDesc = vDesc;
