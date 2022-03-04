@@ -14,7 +14,11 @@ namespace VendorOrder.Models
     VName = vName;
     VDesc = vDesc;
     _vInstance.Add(this);
-    //Id = _vInstance.Count;
+    Id = _vInstance.Count;
+  }
+  public static void ClearAll()
+  {
+    _vInstance.Clear();
   }
   
   }
