@@ -11,7 +11,7 @@ namespace VendorOrder.Models
   public Vendor(string vName,string vDesc)
   {
     VName = vName;
-    // //VDesc = vDesc;
+    VDesc = vDesc;
     // _vInstance.Add(this)
   }
   
