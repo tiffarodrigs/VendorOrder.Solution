@@ -20,6 +20,10 @@ namespace VendorOrder.Models
   {
     _vInstance.Clear();
   }
+  public static List<Vendor> GetAll()
+  {
+    return _vInstance;
+  }
   
   }
 }
