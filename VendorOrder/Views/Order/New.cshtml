@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <body>
+  <h1>Add a new item to @Model.VName</h1>
+    <form action="/vendors/@Model.Id/orders" method="post">
+      <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
+      <label for="orderName">Order Item</label>
+      <input id="orderName" name="orderName" type="text">
+      <label for="orderDescription">Order description</label>
+      <input id="orderDescription" name="orderDescription" type="text">
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

@@ -25,5 +25,28 @@ namespace VendorOrder.Controllers
       List<Vendor> vendorObjList = Vendor.GetAll();
       return View(vendorObjList);
     }
+    [HttpGet("/vendors/{Id}")]
+    public ActionResult Show(int id)
+    {
+      Dictionary<string,objet> model = new Dictionary<string, object>();
+      Vendor selectedVendor = Vendor.Find(id);
+      List<Order> vendorOrders = selectedVendor.VenOrdObjList
+      model.Add("vendor",selectedVendor)
+      model.Add("orders",vendorOrders)
+      return View(model);
+    }
+        // This one creates new oders within a given vendors, not new vendors:
+    [HttpPost("/vendors/{vendorId}/orders")]
+       public ActionResult Create(int vendorId, string orderName, string orderDescription)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor foundVendor = Vendor.Find(vendorId);
+      Order newOrder = new Order(orderName,orderDescription);
+      foundVendor.AddOrder(newOrder);
+      List<Order> vendorOrder = foundVendor.Order;
+      model.Add("order", vendorOrder);
+      model.Add("vendor", foundVendor);
+      return View("Show", model);
+    }
   }
 } 

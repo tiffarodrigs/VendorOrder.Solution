@@ -31,7 +31,7 @@ namespace VendorOrder.Models
   }
     public void AddOrder (Order order)
   {
-     VenOrdObjList.Add(order);
+    VenOrdObjList.Add(order);
   }
   
   }
