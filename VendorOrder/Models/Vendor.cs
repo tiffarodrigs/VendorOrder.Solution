@@ -8,6 +8,8 @@ namespace VendorOrder.Models
   public string VDesc {get;set;}
   public int Id { get; }
   private static List<Vendor>  _vInstance = new List<Vendor> {};
+  //public static List<Vendor>  _vInstance = new List<Vendor> {};
+
   public List<Order> VenOrdObjList {get; set;}
   public Vendor(string vName,string vDesc)
   {
@@ -20,6 +22,10 @@ namespace VendorOrder.Models
   public static void ClearAll()
   {
     _vInstance.Clear();
+  }
+    public static void ClearOne(int id)
+  {
+    _vInstance.RemoveAt(id-1);
   }
   public static List<Vendor> GetAll()
   {

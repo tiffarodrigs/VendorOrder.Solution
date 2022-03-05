@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  </head>
-  <body>
+@{
+  Layout = "_Layout";
+}
     @using VendorOrder.Models;
 
     <h3>Here are all the orders in this @Model["vendor"].VName Vendor:</h3>
@@ -19,5 +14,6 @@
     <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new Order</a></p>
     <p><a href='/vendors'>Return to vendors list</a></p>
     <p><a href='/'>Return to Main Page</a></p> 
-  </body>
-</html>
+  <form action='/vendors/@Model["vendor"].Id/delete' method="post">
+  <button type="submit" name="button">Delete this Vendor </button>
+</form>
