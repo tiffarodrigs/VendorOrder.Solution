@@ -88,7 +88,7 @@ public void AddOrder_AssociatesOrderWithCategory_OrderList()
     string orName = "Pastry";
     string orDesc = "Pastry";
     int orPrice= 20;
-    Order newOrder = new Order(orName,orDesc,orPrice);
+    Order newOrder = new Order(orName,orDesc,orPrice,"27 Dec");
     List<Order> newList = new List<Order> { newOrder };
     string vName = "ABC Cafe";
     string vDesc = "ABC Cafe"; 
