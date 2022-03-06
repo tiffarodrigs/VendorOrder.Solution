@@ -8,14 +8,16 @@ namespace VendorOrder.Models
     public string OrDesc{get; set;}
     public int  OrPrice{get; set;}
     public int Id{get; set;}
+    public string OrDate {get; set;}
     // DateTime curDate = DateTime.Now
     // public string OrDate =curDate.ToString("MM/dd/yyyy")
     private static List<Order> _orInstance =new List<Order>{};
-    public Order(string orName,string orDesc, int orPrice)
+    public Order(string orName,string orDesc, int orPrice,string orDate)
     {
       OrName = orName;
       OrDesc = orDesc;
       OrPrice = orPrice;
+      OrDate = orDate;
       _orInstance.Add(this);
       Id = _orInstance.Count;
 
