@@ -67,22 +67,17 @@ namespace VendorOrder.Controllers
     [HttpPost("vendors/{vendorId}/orders/{orderId}/delete")]
     public ActionResult DeleteOne(int vendorId,int orderId)
     {
-      Console.WriteLine("jjj"+orderId);
       Dictionary <string,object> model1 = new Dictionary<string,object> ();
       Vendor foundedVendor = Vendor.Find(vendorId);
       List<Order> vendorsCurrentOrders = foundedVendor.VenOrdObjList;
-      Console.WriteLine("vendorsCurrentOrders.Count" +vendorsCurrentOrders.Count);
       foreach(Order order in vendorsCurrentOrders)
       {
         if(order.Id==orderId)
         {
-        Console.WriteLine(" id of order insed vendor" + order.Id);
         vendorsCurrentOrders.Remove(order);
         Order.GetAll().Remove(order);
         break;     
         }
-
-        Console.WriteLine("vendorsCurrentOrders.Count" +vendorsCurrentOrders.Count);
       }
       foreach(Order order in vendorsCurrentOrders)
       {
@@ -98,13 +93,8 @@ namespace VendorOrder.Controllers
         order.Id = order.Id-1;
         }
       }
-      Console.WriteLine("Order class list count" +Order.GetAll().Count);
-
       model1.Add("vendor",foundedVendor);
       model1.Add("orders",vendorsCurrentOrders);
-      Console.WriteLine("vendorsCurrentOrders.Count1" +vendorsCurrentOrders.Count);
-      Console.WriteLine("Order class list count1" +Order.GetAll().Count);
-
         return View("Show", model1);
     }
 

@@ -1,7 +1,7 @@
 @{
   Layout = "_Layout";
 }
-  <h1>Add a new item to @Model.VName</h1>
+  <h3>Add a new item to @Model.VName</h3>
     <form action="/vendors/@Model.Id/orders" method="post">
       <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
       <label for="orderName">Order Item</label>
