@@ -25,11 +25,7 @@ namespace VendorOrder.Controllers
       return View(model);
       
     }
-    //     [HttpPost("/items/delete")]
-    // public ActionResult DeleteAll()
-    // {
-    //   Item.ClearAll();
-    //   return View();
-    // }
+
+
   }
 }  

@@ -6,7 +6,7 @@ namespace VendorOrder.Models
     // properties, constructors, methods, etc. go here
   public string VName {get;set;}
   public string VDesc {get;set;}
-  public int Id { get; }
+  public int Id { get; set; }
   private static List<Vendor>  _vInstance = new List<Vendor> {};
   //public static List<Vendor>  _vInstance = new List<Vendor> {};
 
@@ -26,6 +26,14 @@ namespace VendorOrder.Models
     public static void ClearOne(int id)
   {
     _vInstance.RemoveAt(id-1);
+    foreach (Vendor vendor in  _vInstance)
+    {
+      if(vendor.Id > id)
+      {
+        vendor.Id = vendor.Id-1;
+      }
+      
+    }
   }
   public static List<Vendor> GetAll()
   {
@@ -35,9 +43,21 @@ namespace VendorOrder.Models
   {
     return _vInstance[searchId-1];
   }
-    public void AddOrder (Order order)
+  public void AddOrder (Order order)
   {
     VenOrdObjList.Add(order);
+  }
+  public void RemoveOrder (int orderId)
+  {
+    VenOrdObjList.RemoveAt(orderId-1);
+    foreach (Order order in  VenOrdObjList)
+    {
+      if(order.Id > orderId)
+      {
+        order.Id = order.Id-1;
+      }
+      
+    }
   }
   
   }
