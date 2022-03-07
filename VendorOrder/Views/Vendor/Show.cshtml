@@ -1,21 +1,23 @@
 @{
   Layout = "_Layout";
 }
-@using VendorOrder.Models;
-<h3>Here are all the orders in this @Model["vendor"].VName Vendor:</h3>
-<ol>
-  @foreach (Order order in @Model["orders"])
-    {
-      <p>test show in vendor</p>
-      <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.OrName</a></li>
-    }
-</ol>
-<form action='/vendors/@Model["vendor"].Id/delete' method="post">
-  <button type="submit" name="button">Delete this Vendor </button>
-</form>
-<div class="links">
-<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new Order</a></p>
-<p><a href='/vendors'>Return to vendors list</a></p>
-<p><a href='/'>Return to Main Page</a></p> 
+<div class ="container">
+  @using VendorOrder.Models;
+  <h3>Here are the orders in @Model["vendor"].VName Vendor:</h3>
+  <ul>
+    @foreach (Order order in @Model["orders"])
+      {
+      
+        <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.OrName</a></li>
+      }
+  </ul>
+  <form action='/vendors/@Model["vendor"].Id/delete' method="post">
+    <button type="submit" name="button">Delete this Vendor </button>
+  </form>
+  <div class="links">
+    <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new Order</a></p>
+    <p><a href='/vendors'>Return to vendors list</a></p>
+    <p><a href='/'>Return to Main Page</a></p> 
+  </div>
 </div>
 

@@ -1,13 +1,15 @@
 @{
   Layout = "_Layout";
 }
-<h3>Order Details:<h3>
-<h5>The order item is : @Model["order"].OrName </h5>
-<h5>This order belongs to Vendor : @Model["vendor"].VName</h5>
-<form action='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id/delete' method="post">
-<button type="submit">Delete This Order</button>
-</form>
-<div class="links">
-<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add another item</a></p>
-<p><a href='/vendors'>View all Vendors</a></p>
+<div class ="container">
+  <h3>Order Details:<h3>
+  <h5>The order item is : @Model["order"].OrName </h5>
+  <h5>This order belongs to Vendor : @Model["vendor"].VName</h5>
+  <form action='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id/delete' method="post">
+    <button type="submit">Delete This Order</button>
+  </form>
+  <div class="links">
+    <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a></p>
+    <p><a href='/vendors'>View all Vendors</a></p>
+  </div>
 </div>

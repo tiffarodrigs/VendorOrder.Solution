@@ -8,7 +8,6 @@ namespace VendorOrder.Models
   public string VDesc {get;set;}
   public int Id { get; set; }
   private static List<Vendor>  _vInstance = new List<Vendor> {};
-  //public static List<Vendor>  _vInstance = new List<Vendor> {};
 
   public List<Order> VenOrdObjList {get; set;}
   public Vendor(string vName,string vDesc)
@@ -31,8 +30,7 @@ namespace VendorOrder.Models
       if(vendor.Id > id)
       {
         vendor.Id = vendor.Id-1;
-      }
-      
+      }     
     }
   }
   public static List<Vendor> GetAll()
@@ -55,8 +53,7 @@ namespace VendorOrder.Models
       if(order.Id > orderId)
       {
         order.Id = order.Id-1;
-      }
-      
+      }     
     }
   }
   
